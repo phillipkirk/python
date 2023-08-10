@@ -18,7 +18,7 @@ while status == True:
         system('cls')
         console_calculator = True
         print("Add: + | Subtract: - | Multiply: * | Divide: / | Power: ^")
-        with open("T10/calculator_log.txt", 'a') as log:
+        with open("./calculator_log.txt", 'a') as log:
             print("\nYour calculations will be written to a text file upon exiting the app.")
             print("To return to the menu enter 'q' as the operator.\n")
             while console_calculator == True:
