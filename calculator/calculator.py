@@ -87,7 +87,7 @@ while status == True:
             print("\n")
             try:
                 with open(user_file, 'r') as file:
-                    with open('T10\calculator_log.txt', 'a') as log:
+                    with open('./calculator_log.txt', 'a') as log:
                         for line in file:
                             # Split at the new lines in the file
                             line = line.split('\n')

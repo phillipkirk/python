@@ -1,0 +1,22 @@
+2.0 * 24.0 = 48.0
+2.0 + 24.0 = 26.0
+18.0 ^ 21.0 = 2.2946825189512942e+26
+2.0 - 24.0 = -22.0
+2.0 / 24.0 = 0.08333333333333333
+Zero Division Error: You cannot divide by zero, please try again.
+65.0 ^ 25.0 = 2.1029740616282273e+45
+Value Error: You have entered an invalid value, please try again.
+Invalid Operator: That operator does not exist, please try again.
+456.0 / 34.0 = 13.411764705882353
+32.0 * 100.0 = 3200.0
+25.0 ^ 42.0 = 5.169878828456423e+58
+24.0 + 45.0 = 69.0
+65.0 - 54.0 = 11.0
+2.0 ^ 2.0 = 4.0
+150.0 / 125.0 = 1.2
+14.0 * 64.0 = 896.0
+Zero Division Error: You cannot divide by zero, please try again.
+34.0 * 26.0 = 884.0
+16.0 ^ 24.0 = 7.922816251426434e+28
+2.0 * 4.0 = 8.0
+Value Error: You have entered an invalid value, please try again.
