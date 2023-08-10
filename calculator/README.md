@@ -14,13 +14,13 @@ Once these have been entered it will output the full calculation with an answer.
 
 For file calculations you need to create a .txt file with all the calculations you wish to run (an (example file)[calc_test_data.txt] is included).
 
-[!important]
-Make sure your terminal is running in the same directory as the calculations test file.
+> [!important]
+> Make sure your terminal is running in the same directory as the calculations test file.
 
 The format is:
 
-'''
+```
 <number1> <operator> <number2>
-'''
+```
 
 When you select the File Calculation option you will be asked for the file name, enter the file name and extention, e.g. calculations.txt. The terminal will then output the calculations with results, one per line.
