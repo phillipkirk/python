@@ -23,9 +23,12 @@ while status == True:
             print("To return to the menu enter 'q' as the operator.\n")
             while console_calculator == True:
                 try:
+                    # Collect input
                     number1 = float(input('Please enter the first number: '))
                     number2 = float(input('Please enter the second number: '))
                     operator = input('Please enter the operator: ')
+
+                    # Logic to calculate and return result
                     if operator == "+":
                         result = number1 + number2
                         print("{} + {} = {}\n".format(number1, number2, result))
@@ -67,7 +70,7 @@ while status == True:
                     print("Value Error: You have entered an invalid value, please try again.\n")
                     log.write("Value Error: You have entered an invalid value, please try again.\n")
 
-    # Uses text file as input, tested using file input 'T10/calc_test_data.txt'
+    # Uses text file as input, tested using file input 'calc_test_data.txt'
     elif user_choice == '2':
         system('cls')
         print("Add: + | Subtract: - | Multiply: * | Divide: / | Power: ^\n")
