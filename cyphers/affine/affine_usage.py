@@ -10,9 +10,9 @@ aff.set_b(randint(1, 100))
 print(f"Running with settings a = {aff.a}, b = {aff.b}")
 
 # Set message
-message = "Hello, World!"
+message = input('Enter secret: ')
 
-# Encipher the message
+# Encipher the message and save to file
 message_c = ''
 for l in message:
     l = l
@@ -20,15 +20,25 @@ for l in message:
         message_c += aff.cipher(l)
     else:
          message_c += l
-     
-print(f'Encipher: {message} -> {message_c}')
+print('Secret written to file!')
+with open('secret.txt', 'w') as file:
+    file.write(message_c)
 
 # Decipher the message
+print('Decipher from file:')
+
+with open('secret.txt', 'r') as file:
+    secret = file.read()
+
+print(f'The secret is: {secret}')
+print('Deciphering...')
+
 message_d = ''
-for l in message_c:
+for l in secret:
     l = l
     if l in aff.alphabet:
         message_d += aff.decipher(l)
     else:
          message_d += l
-print(f"Decripher: {message_c} -> {message_d}")
+
+print(message_d)
