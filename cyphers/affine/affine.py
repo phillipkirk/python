@@ -13,6 +13,10 @@ for i in range(0, 26):
     alpha_o[i] = chr(n)
     n += 1
 
+alphabet = []
+for i in range(97, 123):
+    alphabet += chr(i)
+
 def coprime2(a, b):
     return bltin_gcd(a, b) == 1
 
