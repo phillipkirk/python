@@ -24,21 +24,21 @@ class affine:
         self.alphabet = []
         self.a_list = []
 
-        n = 97
-        for i in range(0, 26):
+        n = 0
+        for i in range(0, 128):
             self.alpha_i[chr(n)] = i
             n += 1
 
-        n = 97
-        for i in range(0, 26):
+        n = 0
+        for i in range(0, 128):
             self. alpha_o[i] = chr(n)
             n += 1
 
-        for i in range(97, 123):
+        for i in range(0, 129):
             self.alphabet += chr(i)
 
         for i in range(1, 9999):
-            if _affine__coprime2(i, 26) == 1:
+            if _affine__coprime2(i, 128) == 1:
                 self.a_list.append(i)
         
         self.a = choice(self.a_list)
@@ -53,17 +53,17 @@ class affine:
     def cipher(self, x):
         li = int(self.alpha_i[x])
 
-        y = ((self.a * li) + self.b) % 26
+        y = ((self.a * li) + self.b) % 128
 
         lo = str(self.alpha_o[y])
         return lo
 
     def decipher(self, y):
 
-        v = modinv(self.a, 26)
+        v = modinv(self.a, 128)
         li = self.alpha_i[y]
 
-        x = v * (li - self.b) % 26
+        x = v * (li - self.b) % 128
 
         lo = self.alpha_o[x]
 

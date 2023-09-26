@@ -15,7 +15,7 @@ message = "Hello, World!"
 # Encipher the message
 message_c = ''
 for l in message:
-    l = l.lower()
+    l = l
     if l in aff.alphabet:
         message_c += aff.cipher(l)
     else:
@@ -26,7 +26,7 @@ print(f'Encipher: {message} -> {message_c}')
 # Decipher the message
 message_d = ''
 for l in message_c:
-    l = l.lower()
+    l = l
     if l in aff.alphabet:
         message_d += aff.decipher(l)
     else:
