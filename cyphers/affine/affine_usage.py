@@ -16,7 +16,7 @@ for l in message:
     else:
          message_c += l
      
-print(f'{message} -> {message_c}')
+print(f'Encript: {message} -> {message_c}')
 
 message_d = ''
 for l in message_c:
@@ -25,4 +25,4 @@ for l in message_c:
         message_d += decipher(a, b, l)
     else:
          message_d += l
-print(f"Decript: {message_d}")
+print(f"Decript: {message_c} -> {message_d}")
