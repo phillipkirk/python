@@ -1,4 +1,4 @@
-from affine import a_list, cipher, decipher, alphabet
+from affine import a_list, alphabet, cipher, decipher
 from random import choice, randint
 
 a = int(choice(a_list))
