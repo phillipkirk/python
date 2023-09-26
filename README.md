@@ -28,6 +28,12 @@ The format is:
 
 When you select the File Calculation option you will be asked for the file name, enter the file name and extention, e.g. calculations.txt. The terminal will then output the calculations with results, one per line.
 
-## cypher.py
+## Ciphers
+
+### affine.py
+
+This is a class implementation of the affine cipher, see affine_usage.py for usage info.
+
+### cypher.py
 
 This script takes your input and outputs a new string encoded with each letter moved by 15, spaces symbols remain the same.
