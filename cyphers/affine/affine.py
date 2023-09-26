@@ -1,62 +1,70 @@
 from math import gcd as bltin_gcd
+from random import choice, randint
 
-alpha_i = {}
-alpha_o = {}
-
-n = 97
-for i in range(0, 26):
-    alpha_i[chr(n)] = i
-    n += 1
-
-n = 97
-for i in range(0, 26):
-    alpha_o[i] = chr(n)
-    n += 1
-
-alphabet = []
-for i in range(97, 123):
-    alphabet += chr(i)
-
-def coprime2(a, b):
-    return bltin_gcd(a, b) == 1
-
-a_list = []
-for i in range(1, 9999):
-    if coprime2(i, 26) == 1:
-         a_list.append(i)
-
+def _affine__coprime2(a, b):
+            return bltin_gcd(a, b) == 1
 def egcd(a, b):
-    if a == 0:
-        return (b, 0, 1)
-    else:
-        g, y, x = egcd(b % a, a)
-        return (g, x - (b // a) * y, y)
+        if a == 0:
+            return (b, 0, 1)
+        else:
+            g, y, x = egcd(b % a, a)
+            return (g, x - (b // a) * y, y)
 
 def modinv(a, m):
-    g, x, y = egcd(a, m)
-    if g != 1:
-        raise Exception('modular inverse does not exist')
-    else:
-        return x % m
+        g, x, y = egcd(a, m)
+        if g != 1:
+            raise Exception('modular inverse does not exist')
+        else:
+            return x % m
 
-def cipher(a, b, x):
-    global alpha_i, alpha_o
+class affine:
+    def __init__(self):
+        self.alpha_i = {}
+        self.alpha_o = {}
+        self.alphabet = []
+        self.a_list = []
 
-    li = int(alpha_i[x])
+        n = 97
+        for i in range(0, 26):
+            self.alpha_i[chr(n)] = i
+            n += 1
 
-    y = ((a * li) + b) % 26
+        n = 97
+        for i in range(0, 26):
+            self. alpha_o[i] = chr(n)
+            n += 1
 
-    lo = str(alpha_o[y])
-    return lo
+        for i in range(97, 123):
+            self.alphabet += chr(i)
 
-def decipher(a, b, y):
-    global alpha_i, alpha_o
+        for i in range(1, 9999):
+            if __coprime2(i, 26) == 1:
+                self.a_list.append(i)
+        
+        self.a = choice(self.a_list)
+        self.b = randint(1, 1000)
 
-    v = modinv(a, 26)
-    li = alpha_i[y]
+    def set_a(self, a):
+        self.a = a
 
-    x = v * (li - b) % 26
+    def set_b(self, b):
+        self.b = b
 
-    lo = alpha_o[x]
+    def cipher(self, x):
+        li = int(self.alpha_i[x])
 
-    return lo
+        y = ((self.a * li) + self.b) % 26
+
+        lo = str(self.alpha_o[y])
+        return lo
+
+    def decipher(self, y):
+
+        v = modinv(self.a, 26)
+        li = self.alpha_i[y]
+
+        x = v * (li - self.b) % 26
+
+        lo = self.alpha_o[x]
+
+        return lo
