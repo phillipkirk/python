@@ -38,7 +38,7 @@ class affine:
             self.alphabet += chr(i)
 
         for i in range(1, 9999):
-            if __coprime2(i, 26) == 1:
+            if _affine__coprime2(i, 26) == 1:
                 self.a_list.append(i)
         
         self.a = choice(self.a_list)
